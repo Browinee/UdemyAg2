@@ -1,0 +1,18 @@
+<div class="panel panel-default" *ngFor="let info of Info">
+   <div class="panel-heading">
+
+	  	<h1>{{info.title}}</h1>
+	  	<div>
+		   <span  class="glyphicon glyphicon-menu-down"
+		          *ngIf="!downTouched"
+				  (click)="downClick(info)"
+
+		   ></span>
+		   <span  class="glyphicon glyphicon-menu-up" *ngIf="upTouched" (click)="upClick(info)" ></span>
+	     	
+	    </div>
+   </div>
+    <div *ngIf="upTouched" class="panel-body">{{info.content}}</div>
+</div>
+
+

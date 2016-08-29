@@ -10,24 +10,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var test_component_1 = require('./test.component');
+var exponential_strength_pipe_1 = require('./exponential-strength.pipe');
+var zippy_component_1 = require('./zippy/zippy.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.Bear = ['Browinee', 'GuitarBrown', 'SuperBrown'];
+        this.Browinee = {
+            name: "Browinee Brown",
+            weight: 587.87546464,
+            money: 105478,
+            birthday: new Date(2016, 8, 29)
+        };
         this.viewMode = 'map';
         this.post = {
             totalLikes: 10,
             isLike: 0,
         };
+        this.toggle = true;
+        this.power = 5;
+        this.factor = 1;
+        this.task = {
+            title: 'Elvis operator',
+            assignee: ''
+        };
     }
     AppComponent.prototype.getChanged = function ($event) {
         console.log($event);
     };
+    AppComponent.prototype.toggleFormat = function () {
+        this.toggle = !this.toggle;
+    };
+    Object.defineProperty(AppComponent.prototype, "format", {
+        get: function () {
+            return this.toggle ? 'shortDate' : 'fullDate';
+        },
+        enumerable: true,
+        configurable: true
+    });
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            template: "\n  \n   <app-test \n      [totalLikes]=\"post.totalLikes\" \n      [isLike]=\"post.isLike\"\n      (isChanged)=\"getChanged($event)\">\n   </app-test>\n\n\n   <h2>ngSwitch change</h2>\n   <ul class=\"nav nav-pills\" >\n      <li [class.active]=\"viewMode=='map'\"><a (click)=\"viewMode='map'\"> Map view</a></li>\n      <li [class.active]=\"viewMode=='list'\"><a (click)=\"viewMode='list'\">List view</a></li>\n\n   </ul>\n   <div [ngSwitch]=\"viewMode\"> \n     <template [ngSwitchCase]=\"'map'\">Show map info </template>\n     <template [ngSwitchCase]=\"'list'\">Show List info </template>\n  </div>\n\n   <h2>*ngFor</h2>\n  <ul>\n    <li *ngFor=\"let bear of Bear ,let i=index\" >{{i+1}}-{{bear}}</li>\n  </ul>\n\n  ",
-            directives: [test_component_1.TestComponent]
+            templateUrl: 'app.component.html',
+            directives: [test_component_1.TestComponent, zippy_component_1.ZippyComponent],
+            pipes: [exponential_strength_pipe_1.ExponentStrength]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
