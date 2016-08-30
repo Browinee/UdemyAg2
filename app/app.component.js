@@ -12,6 +12,8 @@ var core_1 = require('@angular/core');
 var test_component_1 = require('./test.component');
 var exponential_strength_pipe_1 = require('./exponential-strength.pipe');
 var zippy_component_1 = require('./zippy/zippy.component');
+var form_component_1 = require('./form/form.component');
+var mdform_component_1 = require('./ModelDrivenForm/mdform.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.Bear = ['Browinee', 'GuitarBrown', 'SuperBrown'];
@@ -52,7 +54,7 @@ var AppComponent = (function () {
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'app.component.html',
-            directives: [test_component_1.TestComponent, zippy_component_1.ZippyComponent],
+            directives: [test_component_1.TestComponent, zippy_component_1.ZippyComponent, form_component_1.FormComponent, mdform_component_1.MDFormComponent],
             pipes: [exponential_strength_pipe_1.ExponentStrength]
         }), 
         __metadata('design:paramtypes', [])

@@ -1,0 +1,61 @@
+<h2>這是template-driven 的Form</h2>
+
+
+<form [formGroup]="registerForm" >
+
+  <label>Firstname:</label>
+  <input type="text" formControlName="firstname">
+
+  <label>Lastname:</label>
+  <input type="text" formControlName = "lastname">
+
+  <fieldset formGroupName="address">
+  	<label>Street:</label>
+    <input type="text" formControlName = "street">
+
+    <label>Zip:</label>
+    <input type="text" formControlName="zip">
+
+    <label>City:</label>
+    <input type="text" formControlName="city">	
+
+  </fieldset>
+  
+
+  <button type="submit">Submit</button>
+  <counter-input name="counter" ngModel></counter-input>
+
+  
+</form>
+
+
+<h2>這是Model-driven 的Form</h2>
+<form [formGroup]="registerFormBuilder" >
+ 
+  <label>Firstname:</label>
+  <input type="text" formControlName="firstname">
+  <p *ngIf = "registerFormBuilder.controls.firstname.errors">This field is required</p>
+  <label>Lastname:</label>
+  <input type="text" formControlName = "lastname">
+
+  <fieldset formGroupName="address">
+  	<label>Street:</label>
+    <input type="text" formControlName = "street">
+
+    <label>Zip:</label>
+    <input type="text" formControlName="zip">
+
+    <label>City:</label>
+    <input type="text" formControlName="city">	
+
+  </fieldset>
+  
+
+  <button type="submit">Submit</button>
+</form>
+
+
+
+<!--single control-->
+<input type="search" >
+

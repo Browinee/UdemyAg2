@@ -15,6 +15,10 @@ var app_component_1 = require('./app.component');
 var exponential_strength_pipe_1 = require('./exponential-strength.pipe');
 var forms_1 = require('@angular/forms');
 var zippy_component_1 = require('./zippy/zippy.component');
+var form_component_1 = require('./form/form.component');
+var mdform_component_1 = require('./ModelDrivenForm/mdform.component');
+var forms_2 = require('@angular/forms');
+var counter_component_1 = require('./counter/counter.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,12 +26,16 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                forms_2.ReactiveFormsModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 exponential_strength_pipe_1.ExponentStrength,
-                zippy_component_1.ZippyComponent
+                zippy_component_1.ZippyComponent,
+                form_component_1.FormComponent,
+                mdform_component_1.MDFormComponent,
+                counter_component_1.CounterComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

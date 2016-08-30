@@ -2,12 +2,15 @@ import { Component }      from '@angular/core';
 import {TestComponent}    from './test.component';
 import {ExponentStrength} from './exponential-strength.pipe';
 import {ZippyComponent}   from './zippy/zippy.component';
+import {FormComponent}    from './form/form.component';
+import {MDFormComponent}  from './ModelDrivenForm/mdform.component'; 
+
 @Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl:'app.component.html',
   
-  directives:[TestComponent,ZippyComponent],
+  directives:[TestComponent,ZippyComponent,FormComponent,MDFormComponent],
   pipes:[ExponentStrength]
 })
 
