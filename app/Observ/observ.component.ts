@@ -20,11 +20,14 @@ export class ObservComponent {
            var promise = $.getJSON(url);
            return Observable.fromPromise(promise);
          })
+
        
 
      keyups.subscribe(data => console.log(data));
 
- 
+      }
+}
+
 
  
      //  var debounced =_.debounce(function(text){
@@ -44,8 +47,4 @@ export class ObservComponent {
 
 
 
-     })
-   }
 
-  }
-}

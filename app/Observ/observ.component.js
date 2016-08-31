@@ -23,17 +23,6 @@ var ObservComponent = (function () {
             return Rx_1.Observable.fromPromise(promise);
         });
         keyups.subscribe(function (data) { return console.log(data); });
-        //  var debounced =_.debounce(function(text){
-        //    var url="https://api.spotify.com/vi/search?type=artist&q="+text;
-        //   $.getJSON(url,function(artists){
-        //     console.log(artists);
-        //   })
-        //  },400);
-        // $('#search').keyup(function(e){
-        //   var text = e.target.value;
-        //   if(text.length<3)
-        //       return
-        //    debounced(text);
     }
     ObservComponent = __decorate([
         core_1.Component({
@@ -46,4 +35,15 @@ var ObservComponent = (function () {
     return ObservComponent;
 }());
 exports.ObservComponent = ObservComponent;
+//  var debounced =_.debounce(function(text){
+//    var url="https://api.spotify.com/vi/search?type=artist&q="+text;
+//   $.getJSON(url,function(artists){
+//     console.log(artists);
+//   })
+//  },400);
+// $('#search').keyup(function(e){
+//   var text = e.target.value;
+//   if(text.length<3)
+//       return
+//    debounced(text);
 //# sourceMappingURL=observ.component.js.map
