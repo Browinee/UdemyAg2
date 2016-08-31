@@ -20,7 +20,7 @@ var CounterComponent = (function () {
     CounterComponent.prototype.decrement = function () {
         this.counterValue--;
     };
-    CounterComponent.prototype.writeVaule = function (value) {
+    CounterComponent.prototype.writeValue = function (value) {
         if (value !== undefined) {
             this.counterValue = value;
         }
@@ -28,7 +28,7 @@ var CounterComponent = (function () {
     CounterComponent.prototype.registerOnChange = function (fn) {
         this.propagateChange = fn;
     };
-    CounterComponent.prototype.registerOnTouch = function () { };
+    CounterComponent.prototype.registerOnTouched = function () { };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Number)

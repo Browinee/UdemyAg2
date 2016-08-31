@@ -20,7 +20,7 @@ export class CounterComponent implements ControlValueAccessor{
 		this.counterValue--;
 	}
 
-	writeVaule(value:any){
+	writeValue(value:any){
 		if(value !==undefined){
 		 this.counterValue=value;		
 		}
@@ -30,6 +30,6 @@ export class CounterComponent implements ControlValueAccessor{
     	this.propagateChange=fn;
     }
 
-	registerOnTouch() {}
+	registerOnTouched() {}
 }
 

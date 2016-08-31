@@ -19,6 +19,9 @@ var form_component_1 = require('./form/form.component');
 var mdform_component_1 = require('./ModelDrivenForm/mdform.component');
 var forms_2 = require('@angular/forms');
 var counter_component_1 = require('./counter/counter.component');
+var dynamic_form_component_1 = require('./dynamicForm/dynamic-form.component');
+var dynamic_form_question_component_1 = require('./dynamicForm/dynamic-form-question.component');
+var observ_component_1 = require('./Observ/observ.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,7 +38,10 @@ var AppModule = (function () {
                 zippy_component_1.ZippyComponent,
                 form_component_1.FormComponent,
                 mdform_component_1.MDFormComponent,
-                counter_component_1.CounterComponent
+                counter_component_1.CounterComponent,
+                dynamic_form_component_1.DynamicFormComponent,
+                dynamic_form_question_component_1.DynamicFormQuestionComponent,
+                observ_component_1.ObservComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

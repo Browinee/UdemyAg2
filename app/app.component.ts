@@ -1,20 +1,28 @@
-import { Component }      from '@angular/core';
-import {TestComponent}    from './test.component';
-import {ExponentStrength} from './exponential-strength.pipe';
-import {ZippyComponent}   from './zippy/zippy.component';
-import {FormComponent}    from './form/form.component';
-import {MDFormComponent}  from './ModelDrivenForm/mdform.component'; 
+import { Component }         from '@angular/core';
+import {TestComponent}        from './test.component';
+import {ExponentStrength}     from './exponential-strength.pipe';
+import {ZippyComponent}       from './zippy/zippy.component';
+import {FormComponent}        from './form/form.component';
+import {MDFormComponent}      from './ModelDrivenForm/mdform.component'; 
+import { QuestionService }    from './dynamicForm/question.service';
+import {DynamicFormComponent} from './dynamicForm/dynamic-form.component';
+import {ObservComponent}      from './Observ/observ.component';
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl:'app.component.html',
   
-  directives:[TestComponent,ZippyComponent,FormComponent,MDFormComponent],
-  pipes:[ExponentStrength]
+  directives:[TestComponent,ZippyComponent,FormComponent,MDFormComponent,ObservComponent],
+  pipes:[ExponentStrength],
+  providers:[QuestionService]
 })
 
 export class AppComponent {
+  questions: any[];
+  constructor(service: QuestionService) {
+    this.questions = service.getQuestions();
+  }
   Bear:string[] =['Browinee','GuitarBrown','SuperBrown'];
   Browinee={
     name:"Browinee Brown",
@@ -29,14 +37,14 @@ export class AppComponent {
   	isLike:0,
   	
   }
-  getChanged($event){
+  getChanged($event):void{
   	
   	console.log($event);
 
   }
 
   toggle=true;
-  toggleFormat(){
+  toggleFormat():void{
     this.toggle = !this.toggle;
   }
   get format(){
@@ -52,5 +60,5 @@ export class AppComponent {
   }
 
 }
-
+  
 
