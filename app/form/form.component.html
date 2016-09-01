@@ -32,7 +32,18 @@
 			</select>
        </div>		
 	   <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+       
+		<input type="text" class="form-control" name="test"
+		  (keyup)="onKey($event)">
+		  <p>{{value}}</p>
 
+      <input type="text" class="form-control" name="test2"
+		 (keyup)="onKey2(value2.value)" #value2>
+		  <p>{{value3}}</p>
+
+
+		 <input type="text" #box (keyup.enter)="onEn(box.value)"
+		 {{entervalue}}
 	</form>
 
 </div>

@@ -10,40 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Rx_1 = require('rxjs/Rx');
+var wikipedia_service_1 = require('./wikipedia-service');
+var forms_1 = require('@angular/forms');
 var ObservComponent = (function () {
-    function ObservComponent() {
-        var keyups = Rx_1.Observable.fromEvent($('#search'), 'keyup')
-            .map(function (e) { return e.target.value; })
-            .filter(function (text) { return text.length >= 3; })
-            .debounceTime(400)
-            .distinctUntilChanged()
-            .flatMap(function (searchTern) {
-            var url = "https://api.spotify.com/vi/search?type=artist&q=" + searchTern;
-            var promise = $.getJSON(url);
-            return Rx_1.Observable.fromPromise(promise);
-        });
-        keyups.subscribe(function (data) { return console.log(data); });
+    function ObservComponent(wikipediaService) {
+        this.wikipediaService = wikipediaService;
+        this.term = new forms_1.FormControl();
     }
+    ObservComponent.prototype.ngOnInit = function () {
+        this.obs = Rx_1.Observable.create(function (observer) { return observer.next(Date.now()); });
+        this.obs.subscribe(function (v) { return console.log("1st subscriber: " + v); });
+        this.obs.subscribe(function (v) { return console.log("2nd subscriber: " + v); });
+    };
+    ObservComponent.prototype.search = function (term) {
+        this.items = this.wikipediaService.search(this.term.valueChanges);
+    };
     ObservComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'observ',
             templateUrl: 'observ.component.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [wikipedia_service_1.WikipediaService])
     ], ObservComponent);
     return ObservComponent;
 }());
 exports.ObservComponent = ObservComponent;
-//  var debounced =_.debounce(function(text){
-//    var url="https://api.spotify.com/vi/search?type=artist&q="+text;
-//   $.getJSON(url,function(artists){
-//     console.log(artists);
-//   })
-//  },400);
-// $('#search').keyup(function(e){
-//   var text = e.target.value;
-//   if(text.length<3)
-//       return
-//    debounced(text);
 //# sourceMappingURL=observ.component.js.map

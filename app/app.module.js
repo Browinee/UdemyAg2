@@ -22,6 +22,8 @@ var counter_component_1 = require('./counter/counter.component');
 var dynamic_form_component_1 = require('./dynamicForm/dynamic-form.component');
 var dynamic_form_question_component_1 = require('./dynamicForm/dynamic-form-question.component');
 var observ_component_1 = require('./Observ/observ.component');
+var wikipedia_service_1 = require('./Observ/wikipedia-service');
+var http_1 = require('@angular/http');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +32,8 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                forms_2.ReactiveFormsModule
+                forms_2.ReactiveFormsModule,
+                http_1.JsonpModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -43,6 +46,7 @@ var AppModule = (function () {
                 dynamic_form_question_component_1.DynamicFormQuestionComponent,
                 observ_component_1.ObservComponent
             ],
+            providers: [wikipedia_service_1.WikipediaService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

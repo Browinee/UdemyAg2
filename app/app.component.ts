@@ -1,4 +1,4 @@
-import { Component }         from '@angular/core';
+import { Component }          from '@angular/core';
 import {TestComponent}        from './test.component';
 import {ExponentStrength}     from './exponential-strength.pipe';
 import {ZippyComponent}       from './zippy/zippy.component';
@@ -7,6 +7,7 @@ import {MDFormComponent}      from './ModelDrivenForm/mdform.component';
 import { QuestionService }    from './dynamicForm/question.service';
 import {DynamicFormComponent} from './dynamicForm/dynamic-form.component';
 import {ObservComponent}      from './Observ/observ.component';
+import {WikipediaService}     from './Observ/wikipedia-service';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +16,7 @@ import {ObservComponent}      from './Observ/observ.component';
   
   directives:[TestComponent,ZippyComponent,FormComponent,MDFormComponent,ObservComponent],
   pipes:[ExponentStrength],
-  providers:[QuestionService]
+  providers:[QuestionService,WikipediaService]
 })
 
 export class AppComponent {

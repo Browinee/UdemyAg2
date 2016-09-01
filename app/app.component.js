@@ -16,6 +16,7 @@ var form_component_1 = require('./form/form.component');
 var mdform_component_1 = require('./ModelDrivenForm/mdform.component');
 var question_service_1 = require('./dynamicForm/question.service');
 var observ_component_1 = require('./Observ/observ.component');
+var wikipedia_service_1 = require('./Observ/wikipedia-service');
 var AppComponent = (function () {
     function AppComponent(service) {
         this.Bear = ['Browinee', 'GuitarBrown', 'SuperBrown'];
@@ -59,7 +60,7 @@ var AppComponent = (function () {
             templateUrl: 'app.component.html',
             directives: [test_component_1.TestComponent, zippy_component_1.ZippyComponent, form_component_1.FormComponent, mdform_component_1.MDFormComponent, observ_component_1.ObservComponent],
             pipes: [exponential_strength_pipe_1.ExponentStrength],
-            providers: [question_service_1.QuestionService]
+            providers: [question_service_1.QuestionService, wikipedia_service_1.WikipediaService]
         }), 
         __metadata('design:paramtypes', [question_service_1.QuestionService])
     ], AppComponent);

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var hero_1 = require('./hero');
+//import {URLSearchParams,Jsonp} from '@angular/http';
 var FormComponent = (function () {
     function FormComponent() {
         this.active = true;
@@ -17,6 +18,9 @@ var FormComponent = (function () {
             'Super Hot', 'Weather Changer'];
         this.model = new hero_1.Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
         this.submitted = false;
+        this.value = "";
+        this.value3 = "";
+        this.entervalue = "";
     }
     FormComponent.prototype.onSubmit = function (formvalue) {
         this.submitted = true;
@@ -33,6 +37,21 @@ var FormComponent = (function () {
         this.model = new hero_1.Hero(42, '', '');
         this.active = false;
         setTimeout(function () { return _this.active = true; }, 0);
+    };
+    FormComponent.prototype.onKey = function (e) {
+        this.value = "hi,it's value";
+        console.log(e.target.value);
+    };
+    FormComponent.prototype.onKey2 = function (value) {
+        this.value3 = value;
+        console.log(this.value3);
+        //  let ssearch = new URLSearchParams();
+        // ssearch.set('action','opensearch');
+        // ssearch.set('format','json');
+        // console.log(ssearch);
+    };
+    FormComponent.prototype.onEn = function (val) {
+        this.entervalue = val;
     };
     FormComponent = __decorate([
         core_1.Component({

@@ -1,1 +1,10 @@
-<input id="search" type="text" class="form-control" placeholder="Search">
+
+  <div>
+     <h2>Wikipedia Search</h2>
+     <input  type="text" (keyup)="search(term.value)" 
+     [formControl]="term">
+     <ul>
+       <li *ngFor="let item of items|async">{{item}}</li>
+      </ul>
+    </div>
+

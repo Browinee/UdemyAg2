@@ -1,5 +1,7 @@
  import { Component }   from '@angular/core';
 import {Hero}          from './hero';
+//import {URLSearchParams,Jsonp} from '@angular/http';
+
 @Component({
 	selector:'hero-form',
 	templateUrl:'./app/form/form.component.html',
@@ -27,4 +29,25 @@ export class FormComponent{
     this.active = false;
     setTimeout(() => this.active = true, 0);
   }
+  value:string="";
+  onKey(e){
+     this.value="hi,it's value";
+     console.log(e.target.value);
+  }
+  value3:string=""
+   onKey2(value){
+     this.value3=value;
+    console.log(this.value3);
+    //  let ssearch = new URLSearchParams();
+    // ssearch.set('action','opensearch');
+    // ssearch.set('format','json');
+    // console.log(ssearch);
+  }
+ 
+ entervalue:string="";
+ onEn(val:string){
+   this.entervalue=val;
+ }
+
+   
 }

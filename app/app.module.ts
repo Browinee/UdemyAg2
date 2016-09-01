@@ -13,11 +13,15 @@ import {CounterComponent}               from './counter/counter.component';
 import { DynamicFormComponent }         from './dynamicForm/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamicForm/dynamic-form-question.component';
 import {ObservComponent}                from './Observ/observ.component';
+import {WikipediaService}               from './Observ/wikipedia-service';
+import { JsonpModule }                  from '@angular/http';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JsonpModule
   ],
   declarations: [
     AppComponent,
@@ -30,7 +34,7 @@ import {ObservComponent}                from './Observ/observ.component';
     DynamicFormQuestionComponent,
     ObservComponent
   ],
- 
+  providers:[WikipediaService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
