@@ -8,13 +8,14 @@ import { QuestionService }    from './dynamicForm/question.service';
 import {DynamicFormComponent} from './dynamicForm/dynamic-form.component';
 import {ObservComponent}      from './Observ/observ.component';
 import {WikipediaService}     from './Observ/wikipedia-service';
+import {HttpComponent}        from './http/http.component';
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl:'app.component.html',
   
-  directives:[TestComponent,ZippyComponent,FormComponent,MDFormComponent,ObservComponent],
+  directives:[TestComponent,ZippyComponent,FormComponent,MDFormComponent,ObservComponent,HttpComponent],
   pipes:[ExponentStrength],
   providers:[QuestionService,WikipediaService]
 })

@@ -14,14 +14,16 @@ import { DynamicFormComponent }         from './dynamicForm/dynamic-form.compone
 import { DynamicFormQuestionComponent } from './dynamicForm/dynamic-form-question.component';
 import {ObservComponent}                from './Observ/observ.component';
 import {WikipediaService}               from './Observ/wikipedia-service';
-import { JsonpModule }                  from '@angular/http';
-
+import {HttpComponent}                  from './http/http.component';
+import { HttpModule, JsonpModule }      from '@angular/http';
+import {HeroListComponent}              from './http/hero-list.component';
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    JsonpModule
+    JsonpModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { JsonpModule }                  from '@angular/http';
     CounterComponent,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
-    ObservComponent
+    ObservComponent,
+    HttpComponent,
+    HeroListComponent
   ],
   providers:[WikipediaService],
   bootstrap: [ AppComponent ]

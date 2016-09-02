@@ -23,7 +23,9 @@ var dynamic_form_component_1 = require('./dynamicForm/dynamic-form.component');
 var dynamic_form_question_component_1 = require('./dynamicForm/dynamic-form-question.component');
 var observ_component_1 = require('./Observ/observ.component');
 var wikipedia_service_1 = require('./Observ/wikipedia-service');
+var http_component_1 = require('./http/http.component');
 var http_1 = require('@angular/http');
+var hero_list_component_1 = require('./http/hero-list.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +35,8 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 forms_2.ReactiveFormsModule,
-                http_1.JsonpModule
+                http_1.JsonpModule,
+                http_1.HttpModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -44,7 +47,9 @@ var AppModule = (function () {
                 counter_component_1.CounterComponent,
                 dynamic_form_component_1.DynamicFormComponent,
                 dynamic_form_question_component_1.DynamicFormQuestionComponent,
-                observ_component_1.ObservComponent
+                observ_component_1.ObservComponent,
+                http_component_1.HttpComponent,
+                hero_list_component_1.HeroListComponent
             ],
             providers: [wikipedia_service_1.WikipediaService],
             bootstrap: [app_component_1.AppComponent]
